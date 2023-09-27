@@ -68,16 +68,32 @@ window.addEventListener('DOMContentLoaded', () => {
     function playAudio() {
         if (!isPlay) {
             audio.play();
+            fadeIn();
             isPlay = true;
             btnPlay.classList.remove('audio-player__play_active');
             btnPause.classList.add('audio-player__pause_active');
 
         } else {
             audio.pause();
+            fadeOut();
             isPlay = false;
             btnPlay.classList.add('audio-player__play_active');
             btnPause.classList.remove('audio-player__pause_active');
         }
+    }
+
+    function fadeIn() {
+        image.style.animationName = 'fade-in';
+        setTimeout(() => {
+            image.style.animationName = 'none';
+        }, 2000);
+    }
+
+    function fadeOut() {
+        image.style.animationName = 'fade-out';
+        setTimeout(() => {
+            image.style.animationName = 'none';
+        }, 2000);
     }
 
     function playPrev() {
