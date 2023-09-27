@@ -1,0 +1,253 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+@mixin thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.audio-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    color: white;
+
+    &__bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        filter: blur(10px);
+    }
+
+    &__wrapper {
+        width: 420px;
+    }
+
+    &__wrapper-img {
+        height: 420px;
+        overflow: hidden;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: none 2s linear forwards;
+    }
+
+    &__play-svg,
+    &__pause-svg,
+    &__arrow-svg,
+    &__volume-svg,
+    &__rs-school-logo {
+        display: block;
+        width: 100%;
+        max-height: 100%;
+    }
+
+    &__main,
+    &__footer {
+        padding: 15px;
+        background-color: gray;
+    }
+
+    &__main-row {
+        position: relative;
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &_flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &_jcc {
+            justify-content: center;
+        }
+    }
+
+    &__play,
+    &__pause,
+    &__arrow {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    &__play,
+    &__pause {
+        position: absolute;
+        z-index: -5;
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+
+        &_active {
+            position: static;
+            z-index: 1;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        &:hover {
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 1px 1px 5px rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &__singer {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 100%;
+        color: yellow;
+        transition: all 3s ease-in-out;
+    }
+
+    &__name-song {
+        transition: all 3s ease-in-out;
+    }
+
+    &__wrapper-arrows {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__arrow {
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 1px 1px 5px rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &__duration-time {
+        color: yellow;
+        text-align: right;
+    }
+
+    &__progress-bar,
+    &__volume {
+        appearance: none;
+        height: 5px;
+        width: 100%;
+        border-radius: 20px;
+        margin: 10px 0;
+        background-color: #000000;
+
+        &::-webkit-slider-thumb {
+            @include thumb;
+        }
+
+        &::-moz-range-thumb {
+            @include thumb;
+        }
+    }
+
+    &__volume-wrapper-svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__volume {
+        &_w70 {
+            width: 50%;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__github {
+        color: white;
+        text-decoration: none;
+        transition: color 0.5s ease-in-out;
+
+        &:hover {
+            color: yellow;
+        }
+    }
+
+    &__rs-school-link {
+        width: 50px;
+        height: auto;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        filter: grayscale(100%);
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    50% {
+        filter: grayscale(100%);
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        filter: grayscale(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    30% {
+        filter: grayscale(100%);
+    }
+
+    100% {
+        filter: grayscale(100%);
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}

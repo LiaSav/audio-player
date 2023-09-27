@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>audio-player</title>
+</head>
+
+<body>
+
+    <div class="audio-player">
+        <div class="audio-player__bg"></div>
+        <audio class="audio" src=""></audio>
+        <div class="audio-player__wrapper">
+            <div class="audio-player__wrapper-img">
+                <img class="audio-player__image" src="" alt="">
+            </div>
+            <div class="audio-player__main">
+                <div class="audio-player__main-row audio-player__main-row_flex">
+                    <div class="audio-player__play audio-player__play_active">
+                        <svg class="audio-player__play-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z" />
+                        </svg>
+                    </div>
+                    <div class="audio-player__pause">
+                        <svg class="audio-player__pause-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72V328c0 13.3-10.7 24-24 24s-24-10.7-24-24V184c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0V328c0 13.3-10.7 24-24 24s-24-10.7-24-24V184c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
+                        </svg>
+                    </div>
+                    <div class="audio-player__wrapper-text">
+                        <div class="audio-player__singer"></div>
+                        <div class="audio-player__name-song"></div>
+                    </div>
+                    <div class="audio-player__wrapper-arrows">
+                        <div class="audio-player__arrow audio-player__arrow_prev">
+                            <svg class="audio-player__arrow-svg" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512">
+                                <path
+                                    d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z" />
+                            </svg>
+                        </div>
+                        <div class="audio-player__arrow audio-player__arrow_next">
+                            <svg class="audio-player__arrow-svg" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512">
+                                <path
+                                    d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-player__main-row">
+                    <div class="audio-player__duration-time"></div>
+                    <input class="audio-player__progress-bar" type="range" value="0">
+                    <div class="audio-player__current-time">0:00</div>
+                </div>
+                <div class="audio-player__main-row audio-player__main-row_flex audio-player__main-row_jcc">
+                    <div class="audio-player__volume-wrapper-svg">
+                        <svg class="audio-player__volume-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM412.6 181.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5z" />
+                        </svg>
+                    </div>
+                    <input class="audio-player__volume audio-player__volume_w70" type="range" min="1" max="100"
+                        value="100">
+                    <div class="audio-player__volume-wrapper-svg">
+                        <svg class="audio-player__volume-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                            <path
+                                d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-player__footer">
+                <a class="audio-player__github" href="https://github.com/LiaSav" target="_blank">GitHub</a>
+                <span class="audio-player__year">2023</span>
+                <a class="audio-player__rs-school-link" href="https://rs.school/js-stage0/" target="_blank">
+                    <img class="audio-player__rs-school-logo" src="./assets/logo/rs-school-logo.svg"
+                        alt="rs-school-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
